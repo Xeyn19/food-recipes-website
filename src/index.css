@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+    --font-primary:"Poppins", sans-serif;
+    --color-primary-color:#b91c1c;
+    --shadow-primary-color: 0px 1px 59px -1px rgba(185,28,28,0.22);
+}
