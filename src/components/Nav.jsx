@@ -11,17 +11,17 @@ const Nav = () => {
             <NavLink to='/'
             className={({isActive }) => 
               isActive 
-              ? 'bg-slate-200 text-primary-color px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'
-              : 'hover:bg-slate-200 hover:text-primary-color hover:px-5 hover:py-3 hover:rounded-lg text-black font-bold px-5 py-3 rounded-lg translation-all ease-in duration-100 '
+              ? ' text-white bg-primary-color  px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'
+              : 'hover:bg-primary-color hover:text-white border border-gray-300 hover:px-5 hover:py-3 hover:rounded-lg text-black font-bold px-5 py-3 rounded-lg translation-all ease-in duration-100 '
             }>Home</NavLink>
              <NavLink to='Recipes'
             className={({isActive }) => 
               isActive 
-              ? 'bg-slate-200 text-primary-color px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'
-             : 'hover:bg-slate-200 hover:text-primary-color hover:px-5 hover:py-3 hover:rounded-lg text-black font-bold px-5 py-3 rounded-lg translation-all ease-in duration-100 '
+              ? ' text-white bg-primary-color px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'
+              : 'hover:bg-primary-color hover:text-white border border-gray-300 hover:px-5 hover:py-3 hover:rounded-lg text-black font-bold px-5 py-3 rounded-lg translation-all ease-in duration-100 '
             }>Recipes</NavLink>
-            <button className='bg-slate-200 px-5 py-3 rounded-lg cursor-pointer text-sm
-            hover:bg-red-800 hover:text-white shadow-white shadow-md translation-all ease-in duration-100'>Add Recipe</button>
+            <button className='border border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold
+            hover:bg-primary-color hover:text-white shadow-white shadow-md translation-all ease-in duration-100'>Add Recipe</button>
         </div>
       </nav>
     </>

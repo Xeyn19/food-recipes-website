@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import rateicon from '/rate-icon.png'
 
-const Foods = () => {
+const Foods = ({ category }) => {
     const [foods, setFoods] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -24,13 +24,21 @@ const Foods = () => {
         fetchFoods();
     }, [])
 
+const filteredFoods = 
+category === 'All'
+? foods
+: category === 'Others'
+    ? foods.filter(food => !['Chicken', 'Pork', 'Seafood'].includes(food.subname))
+    : foods.filter(food => food.subname === category);
+
+
 if(loading)(
     <div className="flex min-h-screen justify-center items-center">Loading ...</div>
 )
 
   return (
     <>
-        {foods.map((food) => (
+        {filteredFoods.map((food) => (
              <div key={food.id} className="card bg-base-100 w-95 shadow-md max-md:w-80 max-xl:w-85">
             
              <figure>
