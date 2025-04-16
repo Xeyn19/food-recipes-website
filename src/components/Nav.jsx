@@ -14,7 +14,7 @@ const Nav = () => {
               ? 'bg-slate-200 text-primary-color px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'
               : 'hover:bg-slate-200 hover:text-primary-color hover:px-5 hover:py-3 hover:rounded-lg text-black font-bold px-5 py-3 rounded-lg translation-all ease-in duration-100 '
             }>Home</NavLink>
-             <NavLink to='Recipees'
+             <NavLink to='Recipes'
             className={({isActive }) => 
               isActive 
               ? 'bg-slate-200 text-primary-color px-5 py-3 rounded-lg font-bold shadow-primary-color translation-all ease-in duration-100'

@@ -4,7 +4,64 @@
         "image":"/GarlicButteredShrimp.jpg",
         "subname":"Seafood",
         "name":"Garlic buttered shrimp",
+        "rating":4.9
+    },
+    {
+        "id": 2,
+        "image":"/sinigangnahipon.jpg",
+        "subname":"Seafood",
+        "name":"Sinigang na Hipon",
+        "rating":5
+    },
+    {
+        "id": 3,
+        "image":"/Mini Burger Steaks with Mushroom Gravy.jpg",
+        "subname":"Patty",
+        "name":"Burger Steak with Mushroom gravy",
+        "rating":4.5
+    },
+    {
+        "id": 4,
+        "image":"/sisig.jpg",
+        "subname":"Pork",
+        "name":"Sisig",
+        "rating":4.8
+    },
+    {
+        "id": 5,
+        "image":"/Sizzling Tofu.jpg",
+        "subname":"Soybean",
+        "name":"Tofu Sisig",
+        "rating":4.6
+    }
+    ,{
+        "id": 6,
+        "image":"/Sipo Egg.jpg",
+        "subname":"Egg",
+        "name":"Sipo Egg",
+        "rating":4.5
+    }
+    ,{
+        "id": 7,
+        "image":"/Chickencurry.jpg",
+        "subname":"Chicken",
+        "name":"Chicken Curry",
+        "rating":4.7
+    }
+    ,{
+        "id": 8,
+        "image":"/sinigangnababoy.jpg",
+        "subname":"Pork",
+        "name":"Sinigang na Baboy",
         "rating":4.8
     }
+    ,{
+        "id": 9,
+        "image":"/adobongmanok.jpg",
+        "subname":"Chicken",
+        "name":"Adobong Manok",
+        "rating":4.6
+    }
+    
     
 ]

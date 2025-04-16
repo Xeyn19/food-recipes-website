@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import rateicon from '/rate-icon.png'
 
 const Foods = () => {
     const [foods, setFoods] = useState([]);
@@ -30,7 +31,7 @@ if(loading)(
   return (
     <>
         {foods.map((food) => (
-             <div key={food.id} className="card bg-base-100 w-95 shadow-sm">
+             <div key={food.id} className="card bg-base-100 w-95 shadow-md max-md:w-80 max-xl:w-85">
             
              <figure>
              <img
@@ -40,18 +41,19 @@ if(loading)(
                  />
              </figure>
              <div className="card-body">
-                <h4 className=''>{food.subname}</h4>
+                <h4 className='text-primary-color font-medium'>{food.subname}</h4>
                 <h2 className="card-title">{food.name}</h2>
-                <div className="">
-                    <img src="" alt="" />
-                    <h4>{food.rating}</h4>
+                <div className="flex items-center space-x-1">
+                    <img src={rateicon} alt="" className='w-4' />
+                    <h4 className='text-slate-500 my-auto text-md'>{food.rating}</h4>
                 </div>
              <div className="card-actions justify-end">
-                 <button className="btn btn-primary">Check Recipe</button>
+                 <button className="border border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all
+                 py-3 rounded-lg hover:bg-primary-color hover:text-white">Check Recipe</button>
              </div>
              </div>
          </div>
-        ))
+        )) 
         }
   </>
   )
