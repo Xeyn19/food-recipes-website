@@ -20,7 +20,7 @@ const RecipeesPage = () => {
             </p>
           </div>
 
-          <div className="space-x-6 py-10 max-md:space-x-2 max-md:grid max-md:grid-cols-3 max-md:justify-center max-md:gap-6 ">
+          <div className="space-x-6 py-10  max-md:grid max-md:grid-cols-3 max-md:justify-center max-md:gap-6 max-md:px-2">
             {categories.map((category, index) => (
               <button
                 key={index}
