@@ -9,7 +9,7 @@ const RecipeesPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-slate-100 pb-40 rounded-lg shadow-md max-xl:px-10">
+      <div className="min-h-screen bg-slate-100 pb-40 rounded-lg shadow-md max-md:px-0 max-xl:px-10">
         <div className="flex items-center flex-col w-full">
           <div className="text-center py-20 space-y-5 bg-white shadow-md max-xl:w-full max-md:m-auto max-md:px-5 max-xl:px-40">
             <h4 className="font-medium text-sm">RECIPES FOR EVERY TASTE</h4>
@@ -26,7 +26,7 @@ const RecipeesPage = () => {
                 key={index}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-5 py-3 rounded-lg font-bold border-2 cursor-pointer 
-                  max-md:text-sm max-md:px-3 max-md:py-2 ease-in duration-150 transition-all 
+                  max-md:text-sm max-md:px-4 max-md:py-2 ease-in duration-150 transition-all 
                   ${
                     selectedCategory === category
                       ? 'bg-primary-color text-white border-2'
