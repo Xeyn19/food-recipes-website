@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const RecipeesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const categories = ['All', 'Chicken', 'Pork', 'Seafood', 'Others'];
-  const { cookKeyWord } = useParams(); // <-- uses the search param from URL
+  const { cookKeyWord } = useParams(); 
 
   return (
     <>
@@ -20,13 +20,13 @@ const RecipeesPage = () => {
             </p>
           </div>
 
-          <div className="space-x-6 py-10 max-md:space-x-2">
+          <div className="space-x-6 py-10 max-md:space-x-2 max-md:grid max-md:grid-cols-3 max-md:justify-center max-md:gap-6 ">
             {categories.map((category, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-5 py-3 rounded-lg font-bold border cursor-pointer 
-                  max-md:text-sm max-md:px-3 max-md:py-2 ease-in duration-150 transition-all
+                  max-md:text-sm max-md:px-3 max-md:py-2 ease-in duration-150 transition-all 
                   ${
                     selectedCategory === category
                       ? 'bg-primary-color text-white'

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import rateicon from '/rate-icon.png';
+import { useNavigate } from 'react-router-dom';
 
 const Foods = ({ category, searchKeyword = '' }) => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFoods = async () => {
@@ -57,6 +59,10 @@ const Foods = ({ category, searchKeyword = '' }) => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
+  function handleCheckRecipe(id){
+    navigate(`/Recipes/${id}`)
+  } 
+
   if (loading) {
     return <div className="flex min-h-screen justify-center items-center">Loading ...</div>;
   }
@@ -79,7 +85,8 @@ const Foods = ({ category, searchKeyword = '' }) => {
                 <h4 className="text-slate-500 my-auto text-md">{food.rating}</h4>
               </div>
               <div className="card-actions justify-end">
-                <button className="border border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
+                <button onClick={() => handleCheckRecipe(food.id)}
+                className="border border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
                   Check Recipe
                 </button>
               </div>

@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import MainLayout from './layout/MainLayout'
 import RecipeesLayout from './layout/RecipeesLayout'
 import RecipeesPage from './pages/RecipeesPage'
+import RecipesPageDetails from './pages/RecipesPageDetails'
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route index element ={<HomePage />}/>
           <Route path='Recipes' element={<RecipeesLayout />}>
             <Route index element={<RecipeesPage /> }/>
+            <Route path=':foodId' element={<RecipesPageDetails />} />
             <Route path='search/:cookKeyWord' element={<RecipeesPage />} />
           </Route>
       </Route>

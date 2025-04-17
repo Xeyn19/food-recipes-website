@@ -4,7 +4,16 @@
         "image":"/GarlicButteredShrimp.jpg",
         "subname":"Seafood",
         "name":"Garlic buttered shrimp",
-        "rating":4.9
+        "rating":4.9,
+        "ingredients": [
+            "1 lb cleaned and deveined shrimp",
+            "salt",
+            "1/4 cup butter",
+            "20 cloves garlic, minced",
+            "1/2 tsp crushed red pepper flakes",
+            "1 lemon, juiced",
+            "2 tbsp parsley, minced for garnish"
+          ]
     },
     {
         "id": 2,
@@ -12,13 +21,6 @@
         "subname":"Seafood",
         "name":"Sinigang na Hipon",
         "rating":5
-    },
-    {
-        "id": 3,
-        "image":"/Mini Burger Steaks with Mushroom Gravy.jpg",
-        "subname":"Patty",
-        "name":"Burger Steak with Mushroom gravy",
-        "rating":4.5
     },
     {
         "id": 4,
@@ -62,6 +64,7 @@
         "name":"Adobong Manok",
         "rating":4.6
     }
+  
     
     
 ]
