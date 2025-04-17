@@ -41,7 +41,7 @@ const Nav = () => {
 
 
       {isOpen && (
-        <div className="md:hidden flex flex-col mt-4 space-y-3 font-medium">
+        <div className="md:hidden flex flex-col mt-4 space-y-3 font-medium text-center">
           <NavLink to="/" className={navLinkClasses} onClick={toggleMenu}>Home</NavLink>
           <NavLink to="/Recipes" className={navLinkClasses} onClick={toggleMenu}>Recipes</NavLink>
           <button
