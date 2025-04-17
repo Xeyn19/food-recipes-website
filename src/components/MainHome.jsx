@@ -35,8 +35,8 @@ const MainHome = () => {
             ideas flourish and uncover the perfect recipe waiting to be discovered.
           </span>
           <div
-            className="mt-5 flex bg-white w-[670px] h-[70px] px-3 py-5 rounded-lg items-center max-md:w-full
-             max-md:space-x-2 max-md:h-[50px] max-xl:w-full max-xl:self-center"
+            className="mt-5 flex bg-white w-[670px] h-[70px] px-3  py-5 rounded-lg items-center max-md:w-full
+             max-md:space-x-3 max-md:h-[50px] max-xl:w-full max-xl:self-center"
           >
             <img src={porkandspoon} alt="" className="w-7 max-md:w-5" />
             <input
