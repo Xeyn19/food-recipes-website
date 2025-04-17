@@ -47,7 +47,7 @@ const MainHome = () => {
               className="flex-1 border-none outline-none px-5 max-md:px-0 max-md:text-[11px]"
             />
             <button onClick={handleClickSearchCook} className="cursor-pointer">
-              <img src={search} alt="" className="w-12" />
+              <img src={search} alt="" className="w-10 h-10" />
             </button>
           </div>
           <span className="text-slate-600 text-sm">
