@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '/logo.png';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -17,7 +19,8 @@ const Nav = () => {
     <nav className='w-full py-5 px-5 md:px-20 bg-white shadow-md'>
       <div className="flex justify-between items-center">
 
-        <img src={logo} alt="Logo" className="w-20 h-12 rounded-lg cursor-pointer" />
+        <img onClick={() => navigate('/')}
+        src={logo} alt="Logo" className="w-20 h-12 rounded-lg cursor-pointer" />
 
 
         <div className="hidden md:flex space-x-6 items-center font-medium">
