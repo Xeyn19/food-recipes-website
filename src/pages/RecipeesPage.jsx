@@ -26,7 +26,7 @@ const RecipeesPage = () => {
                 key={index}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-5 py-3 rounded-lg font-bold border-2 cursor-pointer 
-                  max-md:text-sm max-md:px-4 max-md:py-2 ease-in duration-150 transition-all 
+                  max-md:text-sm max-md:px-2 max-md:py-2 ease-in duration-150 transition-all 
                   ${
                     selectedCategory === category
                       ? 'bg-primary-color text-white border-2'
