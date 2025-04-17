@@ -81,12 +81,12 @@ const Foods = ({ category, searchKeyword = '' }) => {
               <h4 className="text-primary-color font-medium">{food.subname}</h4>
               <h2 className="card-title">{food.name}</h2>
               <div className="flex items-center space-x-1">
-                <img src={rateicon} alt="" className="w-4" />
-                <h4 className="text-slate-500 my-auto text-md">{food.rating}</h4>
+                <img src={rateicon} alt="" className="w-5" />
+                <h4 className="text-slate-500 my-auto text-md mt-1">{food.rating}</h4>
               </div>
               <div className="card-actions justify-end">
                 <button onClick={() => handleCheckRecipe(food.id)}
-                className="border border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
+                className="border-2 border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
                   Check Recipe
                 </button>
               </div>

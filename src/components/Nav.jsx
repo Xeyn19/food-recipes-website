@@ -12,8 +12,8 @@ const Nav = () => {
 
   const navLinkClasses = ({ isActive }) =>
     isActive
-      ? 'text-white bg-primary-color px-5 py-3 rounded-lg font-bold shadow transition-all duration-100'
-      : 'hover:bg-primary-color hover:text-white border border-gray-300 px-5 py-3 rounded-lg text-black font-bold transition-all duration-100';
+      ? 'text-white bg-primary-color px-5 py-3 rounded-lg font-bold shadow transition-all duration-100 border-2'
+      : 'hover:bg-primary-color hover:text-white border-2 border-gray-300 px-5 py-3 rounded-lg text-black font-bold transition-all duration-100';
 
   return (
     <nav className='w-full py-5 px-5 md:px-20 bg-white shadow-md'>
@@ -26,7 +26,7 @@ const Nav = () => {
         <div className="hidden md:flex space-x-6 items-center font-medium">
           <NavLink to="/" className={navLinkClasses}>Home</NavLink>
           <NavLink to="/Recipes" className={navLinkClasses}>Recipes</NavLink>
-          <button className="border border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white transition-all duration-100">
+          <button className="border-2 border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white ease-in transition-all duration-100">
             Add Recipe
           </button>
         </div>
@@ -45,7 +45,7 @@ const Nav = () => {
           <NavLink to="/" className={navLinkClasses} onClick={toggleMenu}>Home</NavLink>
           <NavLink to="/Recipes" className={navLinkClasses} onClick={toggleMenu}>Recipes</NavLink>
           <button
-            className="border border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white transition-all duration-100"
+            className="border-2 border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white transition-all duration-100"
             onClick={toggleMenu}
           >
             Add Recipe
