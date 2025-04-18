@@ -26,11 +26,11 @@ const MainHome = () => {
           backgroundImage: 'url(/homebg.jpg)',
         }}
       >
-        <div className="w-[750px] space-y-5 -mt-18 max-md:w-full max-md:flex max-md:flex-col max-md:mt-15 max-xl:flex max-xl:flex-col">
+        <div className="w-[750px] space-y-5 text-black -mt-18 max-md:w-full max-md:flex max-md:flex-col max-md:mt-15 max-xl:flex max-xl:flex-col">
           <h1 className="font-bold text-5xl leading-15 -ml-1.5 max-md:text-xl max-md:leading-6">
             You don't know how to make the dish you have in mind?
           </h1>
-          <span className="font-medium">
+          <span className="font-medium text-black">
             Feed your imagination and spark your creativity. From cravings to creations, let your <br />
             ideas flourish and uncover the perfect recipe waiting to be discovered.
           </span>
@@ -44,7 +44,7 @@ const MainHome = () => {
               placeholder="Find what do you want to cook today"
               value={searchCook}
               onChange={handleSearchCook}
-              className="flex-1 border-none outline-none px-5 max-md:px-0 max-md:text-[11px]"
+              className="flex-1 border-none outline-none text-slate-500 px-5 max-md:px-0 max-md:text-[11px]"
             />
             <button onClick={handleClickSearchCook} className="cursor-pointer">
               <img src={search} alt="" className="w-10 h-10 max-md:w-7 max-md:h-7" />

@@ -34,9 +34,10 @@ const Nav = () => {
 
         <div className="md:hidden">
           <button onClick={toggleMenu}>
-            {isOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+            {isOpen ? <FiX className="text-3xl text-black" /> : <FiMenu className="text-3xl text-black" />}
           </button>
         </div>
+
       </div>
 
 
@@ -45,7 +46,7 @@ const Nav = () => {
           <NavLink to="/" className={navLinkClasses} onClick={toggleMenu}>Home</NavLink>
           <NavLink to="/Recipes" className={navLinkClasses} onClick={toggleMenu}>Recipes</NavLink>
           <button
-            className="border-2 border-gray-300 px-5 py-3 rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white transition-all duration-100"
+            className="border-2 border-gray-300 px-5 py-3 text-black rounded-lg cursor-pointer text-sm font-bold hover:bg-primary-color hover:text-white transition-all duration-100"
             onClick={toggleMenu}
           >
             Add Recipe

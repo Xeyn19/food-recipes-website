@@ -13,7 +13,7 @@ const RecipeesPage = () => {
         <div className="flex items-center flex-col w-full">
           <div className="text-center py-20 space-y-5 bg-white shadow-md max-xl:w-full max-md:m-auto max-md:px-5 max-xl:px-40">
             <h4 className="font-medium text-sm">RECIPES FOR EVERY TASTE</h4>
-            <h3 className="font-medium text-4xl">Recipes</h3>
+            <h3 className="font-medium text-4xl text-black">Recipes</h3>
             <p className="w-[1000px] text-slate-600 max-xl:w-full">
               Browse a wide variety of recipes designed for every taste and skill level. From comforting classics to
               creative <br /> culinary delights, find the perfect dish to inspire your next meal!

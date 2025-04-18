@@ -51,12 +51,12 @@ if (!food) return <div>No Recipes found.</div>;
                 <div className="flex flex-col justify-center">
                 <div className='space-y-2'>
                     <h4 className="text-primary-color font-medium max-md:text-sm">{food.subname}</h4>
-                    <h2 className="font-medium text-4xl mb-4 max-md:text-2xl">{food.name}</h2>
+                    <h2 className="font-medium text-4xl text-black mb-4 max-md:text-2xl">{food.name}</h2>
                     <div className="flex items-center  space-x-2 mb-6">
                     <img src={rateicon} alt="rating" className="w-5 h-5" />
                     <span className="text-gray-500 max-md:textsm mt-1">{food.rating}</span>
                     </div>
-                    <h3 className="text-2xl font-semibold mb-2 max-md:text-lg">Ingredients</h3>
+                    <h3 className="text-2xl font-semibold text-black mb-2 max-md:text-lg">Ingredients</h3>
                     <ul className="grid grid-cols-2 gap-x-5 gap-y-2 mt-5 max-md:grid-cols-2 max-sm:grid-cols-1 max-md:text-sm">
                     {Array.isArray(food.ingredients) &&
                         food.ingredients.slice(0, 10).map((item, index) => (
