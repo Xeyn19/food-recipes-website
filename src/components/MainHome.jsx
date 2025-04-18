@@ -50,7 +50,7 @@ const MainHome = () => {
               <img src={search} alt="" className="w-10 h-10 max-md:w-7 max-md:h-7" />
             </button>
           </div>
-          <span className="text-slate-600 text-sm">
+          <span className="text-slate-600 text-sm max-md:text-[10px] max-md:-mt-2">
             Type a keyword and discover recipes that turn your cravings into delicious reality!
           </span>
         </div>
