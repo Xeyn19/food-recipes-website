@@ -87,7 +87,7 @@ const Foods = ({ category, searchKeyword = '' }) => {
               </div>
               <div className="card-actions justify-end">
                 <button onClick={() => handleCheckRecipe(food.id)}
-                className="border-2 text-black border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
+                className="border-2  border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
                   Check Recipe
                 </button>
               </div>
