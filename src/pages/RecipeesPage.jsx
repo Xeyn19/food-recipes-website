@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const RecipeesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const categories = ['All', 'Chicken', 'Pork', 'Seafood', 'Others'];
+  const categories = ['All', 'Chicken', 'Pork','Beef','Seafood', 'Others'];
   const { cookKeyWord } = useParams(); 
 
   return (
@@ -20,7 +20,7 @@ const RecipeesPage = () => {
             </p>
           </div>
 
-          <div className="space-x-2 py-10  max-md:grid max-md:grid-cols-3 max-md:m-auto max-md:gap-6 max-md:px-2">
+          <div className="space-x-2 py-10 xl:space-x-4 max-md:grid max-md:grid-cols-3 max-md:m-auto max-md:gap-6 max-md:px-2">
             {categories.map((category, index) => (
               <button
                 key={index}

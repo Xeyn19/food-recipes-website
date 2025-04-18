@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import rateicon from '/rate-icon.png';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '../components/Spinner';
 
 const Foods = ({ category, searchKeyword = '' }) => {
   const [foods, setFoods] = useState([]);
@@ -35,7 +36,7 @@ const Foods = ({ category, searchKeyword = '' }) => {
     category === 'All'
       ? foods
       : category === 'Others'
-      ? foods.filter((food) => !['Chicken', 'Pork', 'Seafood'].includes(food.subname))
+      ? foods.filter((food) => !['Chicken', 'Pork', 'Seafood','Beef'].includes(food.subname))
       : foods.filter((food) => food.subname === category);
 
   const searchedFoods = searchKeyword
@@ -64,7 +65,7 @@ const Foods = ({ category, searchKeyword = '' }) => {
   } 
 
   if (loading) {
-    return <div className="flex min-h-screen justify-center items-center">Loading ...</div>;
+    return <Spinner />
   }
 
   if(searchedFoods.length === 0)  return  <div className="">No recipes matched your search. Try a different Name!</div> 

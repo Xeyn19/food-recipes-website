@@ -2,29 +2,38 @@ import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import rateicon from '/rate-icon.png';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '../components/Spinner';
 
 
 const RecipesPageDetails = () => {
     const navigate = useNavigate();
     const {foodId} = useParams();
     const [food, setFood] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
 
         const fetchFoodDetails = async () => {
+            setLoading(true)
             try{
                 const response = await fetch('/Foods.json')
+                await new Promise(resolve => setTimeout(resolve,700));
                 const data = await response.json();
                 const foundFood = data.find((food) => food.id === parseInt(foodId));
                 setFood(foundFood);
             }catch(error){
                 console.error('Error fetching details!', error);
+            }finally{
+                setLoading(false)
             }
         }
         fetchFoodDetails();
     }, [foodId])
 
+if (loading) return <Spinner />
 if (!food) return <div>No Recipes found.</div>;
+
+
 
   return (
     <>
