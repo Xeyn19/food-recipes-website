@@ -17,7 +17,7 @@ const MainHomeSecond = () => {
       setLoading(true);
       try {
         const response = await fetch('/Foods.json');
-        const data = await response.json();
+        const data = await response.json(); 
         setFoods(data);
       } catch (error) {
         console.error('Error Fetching food details', error);
