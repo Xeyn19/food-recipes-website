@@ -21,7 +21,7 @@ const MainHome = () => {
     <div className="px-5 max-xl:px-0">
       <div
         className="w-full h-[600px] bg-cover bg-center rounded-xl flex flex-col justify-center px-40 max-xl:flex
-         max-xl:text-center max-md:justify-start max-xl:px-10 max-xl:rounded-none"
+         max-xl:text-center max-md:justify-start max-xl:px-10 max-xl:rounded-none shadow-md"
         style={{
           backgroundImage: 'url(/homebg.jpg)',
         }}
@@ -44,7 +44,7 @@ const MainHome = () => {
               placeholder="Find what do you want to cook today"
               value={searchCook}
               onChange={handleSearchCook}
-              className="flex-1 border-none outline-none text-slate-500 px-5 max-md:px-0 max-md:text-[11px]"
+              className="flex-1 border-none outline-none text-slate-500 px-5 max-md:px-2 max-md:text-[11px]"
             />
             <button onClick={handleClickSearchCook} className="cursor-pointer">
               <img src={search} alt="" className="w-10 h-10 max-md:w-7 max-md:h-7" />
