@@ -1,9 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import rateicon from '/rate-icon.png';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../components/Spinner';
+import { motion, useInView } from 'framer-motion';
 
-const Foods = ({ category, searchKeyword = '' }) => {
+const smoothVariant = {
+  hidden: { opacity: 0, y: 20, scale: 0.98 }, 
+  visible: {
+    opacity: 1,
+    y: 0, 
+    scale: 1, 
+    transition: {
+      duration: 0.8, 
+      ease: 'easeInOut', 
+      delay: 0.1, 
+    },
+  },
+};
+
+const AnimatedSection = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: '-100px' });
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={smoothVariant}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const Foods = ({ searchKeyword = '' }) => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,21 +61,15 @@ const Foods = ({ category, searchKeyword = '' }) => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [category, searchKeyword]);
-
-  const filteredFoods =
-    category === 'All'
-      ? foods
-      : category === 'Others'
-      ? foods.filter((food) => !['Chicken', 'Pork', 'Seafood','Beef'].includes(food.subname))
-      : foods.filter((food) => food.subname === category);
+  }, [searchKeyword]);
 
   const searchedFoods = searchKeyword
-    ? filteredFoods.filter((food) =>
-        food.name.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-        food.subname.toLowerCase().includes(searchKeyword.toLowerCase())
+    ? foods.filter(
+        (food) =>
+          food.name.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+          food.subname.toLowerCase().includes(searchKeyword.toLowerCase())
       )
-    : filteredFoods;
+    : foods;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -60,54 +85,79 @@ const Foods = ({ category, searchKeyword = '' }) => {
     if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
   };
 
-  function handleCheckRecipe(id){
-    navigate(`/Recipes/${id}`)
-  } 
-
-  if (loading) {
-    return <Spinner />
+  function handleCheckRecipe(id) {
+    navigate(`/Recipes/${id}`);
   }
 
-  if(searchedFoods.length === 0)  return  <div className="">No recipes matched your search. Try a different Name!</div> 
+  if (loading) {
+    return <Spinner />;
+  }
+
+  if (searchedFoods.length === 0) {
+    return <div>No recipes matched your search. Try a different Name!</div>;
+  }
+
+  const FoodItem = ({ food }) => {
+    return (
+      <AnimatedSection>
+        <motion.div className="card bg-base-100 w-95 shadow-md max-md:w-80 max-xl:w-85">
+          <figure>
+            <img src={food.image} alt={food.name} className="w-full h-70" />
+          </figure>
+          <div className="card-body">
+            <h4 className="text-primary-color font-medium">{food.subname}</h4>
+            <h2 className="card-title ">{food.name}</h2>
+            <div className="flex items-center space-x-1">
+              <img src={rateicon} alt="" className="w-5" />
+              <h4 className="text-slate-500 my-auto text-md mt-1">{food.rating}</h4>
+            </div>
+            <div className="card-actions justify-end">
+              <button
+                onClick={() => handleCheckRecipe(food.id)}
+                className="border-2 border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white"
+              >
+                Check Recipe
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatedSection>
+    );
+  };
 
   return (
     <div className="w-full flex flex-col items-center">
       <div className="grid grid-cols-3 gap-20 max-md:grid-cols-1 max-xl:grid-cols-2">
         {currentFoods.map((food) => (
-          <div key={food.id} className="card bg-base-100 w-95 shadow-md max-md:w-80 max-xl:w-85">
-            <figure>
-              <img src={food.image} alt={food.name} className="w-full h-70" />
-            </figure>
-            <div className="card-body">
-              <h4 className="text-primary-color font-medium">{food.subname}</h4>
-              <h2 className="card-title ">{food.name}</h2>
-              <div className="flex items-center space-x-1">
-                <img src={rateicon} alt="" className="w-5" />
-                <h4 className="text-slate-500 my-auto text-md mt-1">{food.rating}</h4>
-              </div>
-              <div className="card-actions justify-end">
-                <button onClick={() => handleCheckRecipe(food.id)}
-                className="border-2  border-gray-300 px-4 cursor-pointer font-bold ease-in duration-150 transition-all py-3 rounded-lg hover:bg-primary-color hover:text-white">
-                  Check Recipe
-                </button>
-              </div>
-            </div>
-          </div>
+          <FoodItem key={food.id} food={food} />
         ))}
       </div>
 
       {totalPages > 1 && (
-        <div className="w-full flex justify-center mt-20">
+        <motion.div
+          className="w-full flex justify-center mt-20"
+          variants={smoothVariant}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="join">
-            <button onClick={handlePrevPage} disabled={currentPage === 1} className="join-item btn">
+            <button
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+              className="join-item btn"
+            >
               «
             </button>
             <button className="join-item btn">Page {currentPage}</button>
-            <button onClick={handleNextPage} disabled={currentPage === totalPages} className="join-item btn">
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+              className="join-item btn"
+            >
               »
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
