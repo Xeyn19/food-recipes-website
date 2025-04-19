@@ -44,7 +44,7 @@ const MainHome = () => {
               placeholder="Find what do you want to cook today"
               value={searchCook}
               onChange={handleSearchCook}
-              className="flex-1 border-none outline-none text-slate-500 px-5 max-md:px-2 max-md:text-[11px]"
+              className="flex-1 border-none outline-none text-slate-500 px-5 max-md:px-1 max-md:text-[11px]"
             />
             <button onClick={handleClickSearchCook} className="cursor-pointer">
               <img src={search} alt="" className="w-10 h-10 max-md:w-7 max-md:h-7" />
